@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Портфолио</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+      <nav>
+        <a class="menu-item" href="#main">Главная</a>
+        <a class="menu-item" href="#about">Обо мне</a>
+        <a class="menu-item" href="#contact">Контакты</a>
+      </nav>
+    </header>
+    <h1>Моё новое портфолио</h1>
+    <img class = "image" src="https://i.pinimg.com/originals/31/19/57/3119571163012c0a27c85298b9e4f530.png">
+    <div>
+    <p>Меня зовут Пётр</p>
+    <p>Я учусь создавать сайты и не только</p>
+    <p>Я учусь в школе</p>
+    </div>
+    <div class="form-container">
+    <h2 class="form-title">Свяжитесь со мной</h2>
+    <form id="contactForm">
+        <div class="form-group">
+            <label for="name">Ваше имя:</label>
+            <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="age">Ваш возраст:</label>
+            <input type="number" id="age" name="age" placeholder="Введите ваш возраст" min="1" max="120" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="message">Ваше сообщение:</label>
+            <textarea id="message" name="message" placeholder="Напишите ваше сообщение здесь..." required></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn">Отправить сообщение</button>
+        
+        <p class="form-note">Я отвечу вам в ближайшее время! 😊</p>
+    </form>
+</div>
+</body>
+ <script src="main.js"></script>
+</html>
