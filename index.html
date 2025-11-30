@@ -2,47 +2,135 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Портфолио</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Portal | Главная</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-      <nav>
-        <a class="menu-item" href="#main">Главная</a>
-        <a class="menu-item" href="#about">Обо мне</a>
-        <a class="menu-item" href="#contact">Контакты</a>
-      </nav>
-    </header>
-    <h1>Моё новое портфолио</h1>
-    <img class = "image" src="https://i.pinimg.com/originals/31/19/57/3119571163012c0a27c85298b9e4f530.png">
-    <div>
-    <p>Меня зовут Пётр</p>
-    <p>Я учусь создавать сайты и не только</p>
-    <p>Я учусь в школе</p>
+    <div class="container">
+        <!-- Навигация -->
+        <nav class="minecraft-nav">
+            <div class="nav-buttons">
+                <button class="nav-btn active" data-page="portfolio">Мое Портфолио</button>
+                <button class="nav-btn" data-page="builds">Популярные сборки</button>
+                <button class="nav-btn" data-page="feedback">Форма обратной связи</button>
+            </div>
+        </nav>
+
+        <!-- Страница портфолио -->
+        <div id="portfolio" class="page active">
+            <div class="minecraft-block">
+                <h1 class="block-title">Мое Портфолио</h1>
+                <div class="portfolio-content">
+                    <div class="player-card">
+                        <div class="player-avatar">👨‍💻</div>
+                        <div class="player-info">
+                            <h3>Minecraft Строитель</h3>
+                            <p>Меня зовут Пётр</p>
+                            <p>Опыт игры: 6+ лет</p>
+                            <p>Специализация: Medieval постройки, Redstone механизмы</p>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-grid">
+                        <div class="portfolio-item">
+                            <div class="item-image" style="background: linear-gradient(145deg, #8b4513, #a0522d);">🏰</div>
+                            <h4>Средневековый замок</h4>
+                            <p>Полностью детализированный замок с интерьерами и защитными стенами</p>
+                        </div>
+                        
+                        <div class="portfolio-item">
+                            <div class="item-image" style="background: linear-gradient(145deg, #2f4f4f, #708090);">⚡</div>
+                            <h4>Redstone ферма</h4>
+                            <p>Автоматическая ферма с системой сортировки и хранения ресурсов</p>
+                        </div>
+                        
+                        <div class="portfolio-item">
+                            <div class="item-image" style="background: linear-gradient(145deg, #1e90ff, #00bfff);">🌊</div>
+                            <h4>Подводная база</h4>
+                            <p>Современная база с системой шлюзов и автоматическим освещением</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Страница сборок -->
+        <div id="builds" class="page">
+            <div class="minecraft-block">
+                <h1 class="block-title">Популярные сборки</h1>
+                <div class="builds-list">
+                    <div class="build-item">
+                        <h3>🪓 Better Minecraft [1.20.1]</h3>
+                        <p><strong>Описание:</strong> Улучшенный ванильный опыт с новыми биомами, мобами и структурами</p>
+                        <p><strong>Моды:</strong> 150+ модов оптимизации и контента</p>
+                        <p><strong>Сложность:</strong> ★★★☆☆</p>
+                    </div>
+                    
+                    <div class="build-item">
+                        <h3>🔮 All the Mods 9</h3>
+                        <p><strong>Описание:</strong> Самая полная сборка с технологическими и магическими модами</p>
+                        <p><strong>Моды:</strong> 300+ модов, включая Create, Mekanism, Ars Nouveau</p>
+                        <p><strong>Сложность:</strong> ★★★★★</p>
+                    </div>
+                    
+                    <div class="build-item">
+                        <h3>🏹 RLCraft</h3>
+                        <p><strong>Описание:</strong> Хардкорная сборка с повышенной сложностью выживания</p>
+<p><strong>Моды:</strong> Реалистичная механика, сложные бои, система навыков</p>
+                        <p><strong>Сложность:</strong> ★★★★★</p>
+                    </div>
+                    
+                    <div class="build-item">
+                        <h3>🌾 Farming Valley</h3>
+                        <p><strong>Описание:</strong> Сборка в стиле фермерских симуляторов</p>
+                        <p><strong>Моды:</strong> Углубленное земледелие, животноводство, торговля</p>
+                        <p><strong>Сложность:</strong> ★★☆☆☆</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Страница обратной связи -->
+        <div id="feedback" class="page">
+            <div class="minecraft-block">
+                <h1 class="block-title">Форма обратной связи</h1>
+                <form id="feedbackForm" class="feedback-form">
+                    <div class="form-group">
+                        <label for="name">Имя:</label>
+                        <input type="text" id="name" name="name" required class="minecraft-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Почта:</label>
+                        <input type="email" id="email" name="email" required class="minecraft-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="version">Версия игры:</label>
+                        <select id="version" name="version" required class="minecraft-select">
+                            <option value="">Выберите версию</option>
+                            <option value="1.20.1">1.20.1</option>
+                            <option value="1.19.2">1.19.2</option>
+                            <option value="1.18.2">1.18.2</option>
+                            <option value="1.17.1">1.17.1</option>
+                            <option value="1.16.5">1.16.5</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="theme">Тематика сборки:</label>
+                        <textarea id="theme" name="theme" placeholder="Опишите, какую сборку вы хотите..." required class="minecraft-textarea"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="minecraft-btn">Отправить</button>
+                </form>
+                
+                <div id="formMessage" class="form-message"></div>
+            </div>
+        </div>
     </div>
-    <div class="form-container">
-    <h2 class="form-title">Свяжитесь со мной</h2>
-    <form id="contactForm">
-        <div class="form-group">
-            <label for="name">Ваше имя:</label>
-            <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="age">Ваш возраст:</label>
-            <input type="number" id="age" name="age" placeholder="Введите ваш возраст" min="1" max="120" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="message">Ваше сообщение:</label>
-            <textarea id="message" name="message" placeholder="Напишите ваше сообщение здесь..." required></textarea>
-        </div>
-        
-        <button type="submit" class="submit-btn">Отправить сообщение</button>
-        
-        <p class="form-note">Я отвечу вам в ближайшее время! 😊</p>
-    </form>
-</div>
+
+    <script src="script.js"></script>
 </body>
- <script src="main.js"></script>
 </html>
