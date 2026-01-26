@@ -169,3 +169,29 @@ function simulateFormSubmission(formData) {
         
     }, 1500);
 }
+function sendToTelegram(userData) {
+    const BOT_TOKEN = '8116287614:AAE6KEnPmTpkAneIfkv0OepDaouGdtkwaKQ'
+    const CHAT_ID = '5740401425';
+    
+    const text = 'Новое сообщение\nИмя: ' + userData.name + '\nEmail: ' + userData.email + '\nСообщение: ' + userData.message;
+    
+    fetch('https://api.telegram.org/bot8116287614:AAE6KEnPmTpkAneIfkv0OepDaouGdtkwaKQ/sendMessage', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            chat_id: 5740401425,
+            text: text
+        })
+    })
+    .then(response => response.json())
+    .then(result => {
+        if (result.ok) {
+            console.log('Sent to Telegram');
+        } else {
+            console.log('Error:', result.description);
+        }
+    })
+    .catch(error => {
+        console.log('Fetch error:', error);
+    });
+}
